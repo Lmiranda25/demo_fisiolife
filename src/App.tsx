@@ -8,6 +8,7 @@ import ComoFunciona from './components/sections/ComoFunciona'
 import SelectorConsulta from './components/sections/SelectorConsulta'
 import Cobertura from './components/sections/Cobertura'
 import Testimonios from './components/sections/Testimonios'
+import Blog from './components/sections/Blog'
 import Staff from './components/sections/Staff'
 import Contacto from './components/sections/Contacto'
 
@@ -24,6 +25,7 @@ export default function App() {
         <Cobertura />
         <Testimonios />
         <Staff />
+        <Blog />
         <Contacto />
       </main>
       <Footer />

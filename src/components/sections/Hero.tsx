@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute -left-20 top-20 -z-10 h-72 w-72 animate-blob bg-leaf-500/20 blur-3xl" />
       <div className="absolute -right-10 bottom-10 -z-10 h-80 w-80 animate-blob bg-navy-400/20 blur-3xl [animation-delay:2s]" />
 
-      <div className="container-pro grid items-center gap-10 pt-28 pb-16 lg:grid-cols-2">
+      <div className="container-pro grid items-center gap-10 pt-24 pb-14 sm:pt-28 sm:pb-16 lg:grid-cols-2">
         <div>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="mt-6 font-display text-3xl font-extrabold leading-[1.12] text-white sm:text-5xl lg:text-6xl"
+            className="mt-5 font-display text-3xl font-extrabold leading-[1.12] text-white sm:text-4xl lg:text-5xl xl:text-6xl"
           >
             Cada dolor tiene una historia y una{' '}
             <span className="bg-leaf-gradient bg-clip-text text-transparent">solución posible</span>

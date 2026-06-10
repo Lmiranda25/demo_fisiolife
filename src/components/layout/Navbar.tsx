@@ -32,11 +32,13 @@ export default function Navbar() {
     >
       <nav className="container-pro flex h-18 items-center justify-between">
         <button onClick={() => goTo('inicio')} className="flex items-center py-2" aria-label="Inicio">
-          <img
-            src={reciclada('logo.png')}
-            alt="Fisiolife"
-            className={`h-9 w-auto transition ${scrolled ? '' : 'brightness-0 invert'}`}
-          />
+          <span
+            className={`inline-flex items-center rounded-lg transition-all duration-300 ${
+              scrolled ? 'bg-transparent p-0' : 'bg-white px-3 py-1.5 shadow-sm'
+            }`}
+          >
+            <img src={reciclada('logo.png')} alt="Fisiolife" className="h-8 w-auto sm:h-9" />
+          </span>
         </button>
 
         <ul className="hidden items-center gap-7 lg:flex">

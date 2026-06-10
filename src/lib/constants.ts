@@ -25,5 +25,6 @@ export const NAV_LINKS = [
   { label: 'Servicios', to: 'servicios' },
   { label: 'Cómo funciona', to: 'como-funciona' },
   { label: 'Cobertura', to: 'cobertura' },
+  { label: 'Blog', to: 'blog' },
   { label: 'Contacto', to: 'contacto' },
 ] as const
