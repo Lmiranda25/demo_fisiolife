@@ -20,11 +20,12 @@ export function whatsappLink(message?: string): string {
 // Formspree (placeholder). El cliente pega su ID -> https://formspree.io/f/XXXXXXXX
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id'
 
+// Rutas de las vistas separadas (cada una con su propia URL).
 export const NAV_LINKS = [
-  { label: 'Inicio', to: 'inicio' },
-  { label: 'Servicios', to: 'servicios' },
-  { label: 'Cómo funciona', to: 'como-funciona' },
-  { label: 'Cobertura', to: 'cobertura' },
-  { label: 'Blog', to: 'blog' },
-  { label: 'Contacto', to: 'contacto' },
+  { label: 'Inicio', to: '/' },
+  { label: 'Servicios', to: '/servicios' },
+  { label: 'Cobertura', to: '/cobertura' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Nosotros', to: '/nosotros' },
+  { label: 'Contacto', to: '/contacto' },
 ] as const

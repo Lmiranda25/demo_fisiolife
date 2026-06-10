@@ -1,11 +1,10 @@
+import { Link } from 'react-router-dom'
 import { Phone, Facebook, Youtube, MapPin } from 'lucide-react'
 import { CONTACT, SOCIALS, NAV_LINKS, whatsappLink } from '@/lib/constants'
 import { reciclada } from '@/lib/img'
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon'
 
 export default function Footer() {
-  const goTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-
   return (
     <footer className="bg-navy-gradient text-white">
       <div className="container-pro grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,9 +42,9 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-navy-50/80">
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
-                <button onClick={() => goTo(link.to)} className="transition hover:text-leaf-300">
+                <Link to={link.to} className="transition hover:text-leaf-300">
                   {link.label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>

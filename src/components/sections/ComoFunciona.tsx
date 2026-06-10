@@ -9,10 +9,10 @@ import { stagger, fadeUp, inView } from '@/lib/motion'
 export default function ComoFunciona() {
   return (
     <section id="como-funciona" className="section-pad relative overflow-hidden">
-      {/* Fondo con imagen + overlay navy para legibilidad */}
-      <div className="absolute inset-0 -z-10">
-        <img src={stock('pattern-bg.jpg')} alt="" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-navy-900/92" />
+      {/* Fondo con imagen muy sutil + overlay navy fuerte para legibilidad total */}
+      <div className="absolute inset-0 -z-10 bg-navy-900">
+        <img src={stock('pattern-bg.jpg')} alt="" className="h-full w-full object-cover opacity-15" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-900/95 via-navy-800/95 to-navy-900/97" />
       </div>
       <div className="absolute -right-16 top-10 -z-10 h-72 w-72 animate-blob bg-leaf-500/15 blur-3xl" />
 

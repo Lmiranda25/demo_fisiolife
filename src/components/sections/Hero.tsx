@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { ArrowRight, ShieldCheck, Star } from 'lucide-react'
 import { whatsappLink } from '@/lib/constants'
 import { stock } from '@/lib/img'
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon'
 
 export default function Hero() {
-  const goServices = () => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })
-
   return (
     <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-hero-gradient">
       {/* Imagen sutil + blobs animados */}
@@ -58,13 +57,13 @@ export default function Hero() {
               <WhatsAppIcon className="h-5 w-5" />
               Agenda tu cita
             </a>
-            <button
-              onClick={goServices}
+            <Link
+              to="/servicios"
               className="btn border-2 border-white/40 text-white hover:bg-white hover:text-navy-700"
             >
               Ver servicios
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </Link>
           </motion.div>
 
           <motion.div

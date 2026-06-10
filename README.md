@@ -1,7 +1,8 @@
 # Fisiolife — Fisioterapia Integral
 
 Demo de rediseño para Fisiolife (clínica de fisioterapia, Lima).
-**One-page compacta** en React + Vite + TypeScript + Tailwind + Framer Motion.
+**Multipágina** (vistas separadas con su propia URL) en React + Vite +
+TypeScript + Tailwind + Framer Motion + React Router (HashRouter).
 
 Sitio de referencia: https://www.fisiolife.com.pe/
 
@@ -35,21 +36,23 @@ Tu web quedará en `https://TU-USUARIO.github.io/TU-REPO/`.
 
 ---
 
-## 🧩 Estructura (one-page, 9 bloques de conversión)
+## 🧩 Vistas (cada una con su propia URL)
 
-Inspirada en referentes de conversión en salud (Hims/Hers, Zocdoc, One Medical):
+| Ruta          | Contenido                                                        |
+| ------------- | --------------------------------------------------------------- |
+| `/`           | Home (resumen): hero, servicios destacados, pasos, selector, testimonios + accesos a las demás vistas |
+| `/servicios`  | Todos los servicios filtrables + cómo funciona + selector de consulta |
+| `/cobertura`  | Zonas de atención a domicilio en Lima                           |
+| `/blog`       | Blog filtrable (6 artículos) con modal de lectura               |
+| `/nosotros`   | Equipo, ventajas y testimonios                                  |
+| `/contacto`   | Formulario (Formspree con fallback a WhatsApp) + datos          |
 
-1. **Hero** — promesa + 1 CTA dominante (agendar).
-2. **Barra de confianza** — ventajas reales (experiencia, compromiso, profesionalismo).
-3. **Servicios** — grid filtrable por categoría (los ~13 servicios reales).
-4. **Cómo funciona** — 3 pasos (elimina la incertidumbre).
-5. **Selector de consulta** — Presencial / Online / Domicilio → WhatsApp con contexto. ⭐
-6. **Cobertura** — zonas de atención a domicilio en Lima.
-7. **Testimonios** — prueba social.
-8. **Staff** — el equipo / Alex Silva, breve.
-9. **Contacto** — formulario (Formspree con fallback a WhatsApp) + cierre.
+Más **WhatsApp flotante** siempre visible. Funcionalidades de conversión:
+selector de consulta (Presencial/Online/Domicilio → WhatsApp con contexto),
+grid de servicios filtrable, formulario y WhatsApp flotante.
 
-Más **WhatsApp flotante** siempre visible.
+> Usa **HashRouter**: las URLs llevan `#` (ej. `/#/servicios`). Es lo que
+> garantiza que el routing funcione en GitHub Pages al recargar cualquier vista.
 
 ---
 

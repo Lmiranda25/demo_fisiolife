@@ -1,32 +1,34 @@
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import WhatsAppFloat from './components/layout/WhatsAppFloat'
-import Hero from './components/sections/Hero'
-import TrustBar from './components/sections/TrustBar'
-import Servicios from './components/sections/Servicios'
-import ComoFunciona from './components/sections/ComoFunciona'
-import SelectorConsulta from './components/sections/SelectorConsulta'
-import Cobertura from './components/sections/Cobertura'
-import Testimonios from './components/sections/Testimonios'
-import Blog from './components/sections/Blog'
-import Staff from './components/sections/Staff'
-import Contacto from './components/sections/Contacto'
+import ScrollToTop from './components/layout/ScrollToTop'
+import Home from './pages/Home'
+import ServiciosPage from './pages/ServiciosPage'
+import CoberturaPage from './pages/CoberturaPage'
+import BlogPage from './pages/BlogPage'
+import NosotrosPage from './pages/NosotrosPage'
+import ContactoPage from './pages/ContactoPage'
 
 export default function App() {
+  const location = useLocation()
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
-        <Hero />
-        <TrustBar />
-        <Servicios />
-        <ComoFunciona />
-        <SelectorConsulta />
-        <Cobertura />
-        <Testimonios />
-        <Staff />
-        <Blog />
-        <Contacto />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/servicios" element={<ServiciosPage />} />
+            <Route path="/cobertura" element={<CoberturaPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/nosotros" element={<NosotrosPage />} />
+            <Route path="/contacto" element={<ContactoPage />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </AnimatePresence>
       </main>
       <Footer />
       <WhatsAppFloat />

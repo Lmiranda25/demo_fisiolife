@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import { SERVICES, CATEGORIES, type Category } from '@/data/services'
 import { whatsappLink } from '@/lib/constants'
@@ -7,10 +9,12 @@ import { stagger, fadeUp, inView } from '@/lib/motion'
 
 type Filter = Category | 'todos'
 
-// Grid de servicios filtrable. Funcionalidad de conversión.
-export default function Servicios() {
+// Grid de servicios filtrable. En modo `preview` (Home) muestra solo 6 sin
+// filtros y un botón a la vista completa.
+export default function Servicios({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState<Filter>('todos')
-  const items = SERVICES.filter((s) => filter === 'todos' || s.category === filter)
+  const filtered = SERVICES.filter((s) => filter === 'todos' || s.category === filter)
+  const items = preview ? SERVICES.slice(0, 6) : filtered
 
   return (
     <section id="servicios" className="section-pad bg-paper">
@@ -21,7 +25,8 @@ export default function Servicios() {
           subtitle="Desde terapia manual hasta fisioterapia instrumental y deportiva. Encuentra lo que tu cuerpo necesita."
         />
 
-        {/* Filtros */}
+        {/* Filtros (solo en vista completa) */}
+        {!preview && (
         <div className="mt-10 flex flex-wrap justify-center gap-2.5">
           {CATEGORIES.map((c) => (
             <button
@@ -38,6 +43,7 @@ export default function Servicios() {
             </button>
           ))}
         </div>
+        )}
 
         {/* Grid */}
         <motion.div
@@ -81,6 +87,15 @@ export default function Servicios() {
             })}
           </AnimatePresence>
         </motion.div>
+
+        {preview && (
+          <div className="mt-10 text-center">
+            <Link to="/servicios" className="btn-outline">
+              Ver todos los servicios
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
